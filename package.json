@@ -1,0 +1,28 @@
+{
+  "name": "server_stuff",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run clean && babel src --out-dir lib",
+    "babel-watch": "babel src --watch --out-dir lib",
+    "clean": "rm -r lib/*",
+    "lint": "eslint src",
+    "lint:watch": "esw src -w",
+    "dev-build": "parallelshell 'npm run lint:watch' 'npm run babel-watch'",
+    "start": "node ./lib/server"
+  },
+  "author": "Cole Voss",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^5.8.19",
+    "babel-eslint": "^4.0.5",
+    "eslint": "^0.24.1",
+    "eslint-watch": "^1.2.4",
+    "parallelshell": "^2.0.0"
+  },
+  "dependencies": {
+    "paths-js": "^0.3.5",
+    "react": "^0.13.3"
+  }
+}
